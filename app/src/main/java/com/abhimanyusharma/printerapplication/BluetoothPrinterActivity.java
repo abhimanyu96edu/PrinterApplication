@@ -75,6 +75,8 @@ public class BluetoothPrinterActivity extends AppCompatActivity {
             byte[] printformat = { 0x1B, 0x21, FONT_TYPE };
             btoutputstream.write(printformat);
             String msg = message.getText().toString();
+            Toast.makeText(getApplicationContext(), msg + ":::::ADD ALL DATA TEXT AND PRINT", Toast.LENGTH_SHORT).show();
+
             btoutputstream.write(msg.getBytes());
             btoutputstream.write(0x0D);
             btoutputstream.write(0x0D);
